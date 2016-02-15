@@ -10,7 +10,6 @@
 .materialize-red-text.text-lighten-5 {
   color: #fdeaeb !important;
 }
-
 .materialize-red.lighten-4 {
   background-color: #f8c1c3 !important;
 }
@@ -2191,7 +2190,7 @@
  *    user zoom.
  */
 html {
-  font-family: sans-serif;
+  font-family:  GillSans, Calibri, Trebuchet, sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */

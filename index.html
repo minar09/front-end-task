@@ -15,11 +15,13 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">front-end</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">front end tasks</a></li>
+        <li><a href="#okay">Task 1</a></li>
+          <li><a href="#okay2">Task 2</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">front end tasks</a></li>
+        <li><a href="#okay">Task 1</a></li>
+          <li><a href="#okay2">Task 2</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -48,26 +50,16 @@
         </div>
       </div>
         
-        <div class="row">
-        <div class="col s12">
-          <ul class="tabs">
-            <li class="tab col s3"><a class="active" href="#test1">Task 1</a></li>
-            <li class="tab col s3"><a href="#test2">Task 2</a></li>
-          </ul>
-        </div>
-        <div id="test1" class="col s12">
-            <div class="row">
-                <br>
-                <div id="map" style="with:800px;height:500px;"></div>
-            </div>
-        </div>
-        <div id="test2" class="col s12">
-            <div class="row">
-                <br>
-                <div id="map2" style="with:800px;height:500px;"></div>
-            </div>
-        </div>
+      <div id="okay" class="row">
+          <h5>Task 1</h5>
+        <div id="map" style="with:800px;height:500px;"></div>
       </div>
+      <div id="okay2" class="row">
+          <h5>Task 2</h5>
+        <div id="map2" style="with:800px;height:500px;"></div>
+      </div>
+        
+        
   </div>
 </div>
 
@@ -78,51 +70,7 @@
   <script src="js/materialize.js"></script>
     <script src="js/maplace.min.js"></script>
   <script src="js/gmaps.js"></script>
-    <script type="text/javascript">
-    var map;
-    $(document).ready(function(){
-      map = new GMaps({
-        el: '#map',
-        lat: 37.7833,
-        lng: 22.4167,
-        zoom: 6
-      });
-      $('#search').click(function(e){
-        e.preventDefault();
-        GMaps.geocode({
-          address: $('#first_name').val().trim(),
-          callback: function(results, status){
-            if(status=='OK'){
-              var latlng = results[0].geometry.location;
-              map.setCenter(latlng.lat(), latlng.lng());
-              map.addMarker({
-                lat: latlng.lat(),
-                lng: latlng.lng()
-              });
-            }
-          }
-        });
-        GMaps.geocode({
-          address: $('#last_name').val().trim(),
-          callback: function(results, status){
-            if(status=='OK'){
-              var latlng = results[0].geometry.location;
-              map.setCenter(latlng.lat(), latlng.lng());
-              map.addMarker({
-                lat: latlng.lat(),
-                lng: latlng.lng()
-              });
-            }
-          }
-        });
-      });
-        
-        $(document).keypress(function(e){
-            if (e.which == 13){
-                $("#search").trigger("click");
-            }
-        });
-    });
+    <script type="text/javascript" src="js/tasks.js">
   </script>
   </body>
 </html>
